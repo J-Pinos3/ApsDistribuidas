@@ -1,0 +1,30 @@
+version: '3'
+services:
+  servidor1:
+    build:
+      context: ./servidor1
+      dockerfile: Dockerfile
+    container_name: conte1
+    ports:
+      - "5050:5000"
+      #- "host:contenedor"
+    networks: 
+      - red4
+    volumes:
+      - ./datos:/app/data
+    #volumes: ./ruta host:/ruta contenedor compartir datos
+
+  servidor2:
+    build:
+      context: ./servidor2
+      dockerfile: Dockerfile
+    container_name: conte2
+    ports:
+      - "5052:5001"
+    networks: 
+      - red4
+
+networks: 
+  red4:
+volumes: 
+  datos:

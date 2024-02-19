@@ -1,0 +1,7 @@
+{ "index": { "_index": "empleados" } }
+{ "id": 1, "nombre": "Juan", "apellido": "Perez", "edad": 30, "departamento": "Ventas" } 
+{ "index": { "_index": "empleados" } } 
+{ "id": 2, "nombre": "Maria", "apellido": "Gomez", "edad": 35, "departamento": "Marketing" } 
+{ "index": { "_index": "empleados" } }
+{ "id": 3, "nombre": "Pedro", "apellido": "Lopez", "edad": 28, "departamento": "Tecnologia" } 
+

@@ -1,0 +1,66 @@
+version: '3'
+services:
+
+  nginxs:
+    container_name: nginxs
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    depends_on:
+      - balanceoservidor1
+      - balanceoservidor2
+      - balanceoservidor3
+      - balanceoservidor4
+      - balanceoservidor5
+
+  balanceoservidor1:
+    build:
+      context: ./Servidor1
+      dockerfile: Dockerfile
+    container_name: balanceoservidor1
+    ports:
+      - 5001:5000
+      #- "host:contenedor"
+
+
+  balanceoservidor2:
+    build:
+      context: ./Servidor2
+      dockerfile: Dockerfile
+    container_name: balanceoservidor2
+    ports:
+      - 5002:5000
+      #- "host:contenedor"
+
+
+  balanceoservidor3:
+    build:
+      context: ./Servidor3
+      dockerfile: Dockerfile
+    container_name: balanceoservidor3
+    ports:
+      - 5003:5000
+      #- "host:contenedor"      
+
+
+  balanceoservidor4:
+    build:
+      context: ./Servidor4
+      dockerfile: Dockerfile
+    container_name: balanceoservidor4
+    ports:
+      - 5004:5000
+      #- "host:contenedor"
+
+
+  balanceoservidor5:
+    build:
+      context: ./Servidor5
+      dockerfile: Dockerfile
+    container_name: balanceoservidor5
+    ports:
+      - 5005:5000
+      #- "host:contenedor"      
+
